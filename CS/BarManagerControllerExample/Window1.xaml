@@ -1,0 +1,63 @@
+﻿<Window x:Class="BarManagerControllerExample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300" 
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <!--region #1-->
+    <Window.Resources>
+        <DataTemplate x:Key="barManagerControllerTemplate">
+            <!--Define actions to create a bar, bar items and links to the bar items-->
+            <dxb:BarManagerActionContainer>
+                <!--An action that creates a bar (barMainMenu) at the top of the window-->
+                <dxb:Bar x:Name="barMainMenu" UseWholeRow="True" Caption="Main Menu">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerType="Top"/>
+                    </dxb:Bar.DockInfo>
+                </dxb:Bar>
+                <!--An action that creates a File sub-menu and adds a link to it to the barMainMenu bar-->
+                <dxb:BarSubItem x:Name="menuFile" Content="File" 
+                                dxb:BarItemLinkActionBase.Target="barMainMenu"/>
+                <!--An action that creates an About button and adds a link to it to the barMainMenu bar-->
+                <dxb:BarButtonItem x:Name="btnAbout" Content="About" ItemClick="btnAbout_ItemClick"
+                                   dxb:BarItemLinkActionBase.Target="barMainMenu"/>
+                <!--An action that creates an Exit button and adds a link to it to the menuFile menu-->
+                <dxb:BarButtonItem x:Name="btnExit" Content="Exit" ItemClick="btnExit_ItemClick"
+                                   dxb:BarItemLinkActionBase.Target="menuFile"/>
+            </dxb:BarManagerActionContainer>
+        </DataTemplate>
+    </Window.Resources>
+    <!--endregion #1-->
+
+    <Grid>
+        <!--region #2-->
+        <!--Execute bar customization actions defined in the template-->
+        <dxb:BarManager Name="barManager1" CreateStandardLayout="True">
+            <dxb:BarManager.Controllers>
+                <dxb:TemplatedBarManagerController Template="{StaticResource barManagerControllerTemplate}"/>
+            </dxb:BarManager.Controllers>
+        <!--endregion #2-->
+            <!--Add new bar items and bars-->
+            <dxb:BarManager.Items>
+                <dxb:BarCheckItem x:Name="checkBtnBold" Content="Bold" Glyph="pack://application:,,,/Images/bold16x16.png"/>
+                <dxb:BarCheckItem x:Name="checkBtnItalic" Content="Italic" Glyph="pack://application:,,,/Images/italic16x16.png"/>
+                <dxb:BarCheckItem x:Name="checkBtnUnderline" Content="Underline" Glyph="pack://application:,,,/Images/underline16x16.png"/>
+            </dxb:BarManager.Items>
+            <dxb:BarManager.Bars>
+                <dxb:Bar x:Name="barFormat" Caption="Format">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerType="Top" Row="1"/>
+                    </dxb:Bar.DockInfo>
+                    <dxb:Bar.ItemLinks>
+                        <dxb:BarCheckItemLink BarItemName="checkBtnBold"/>
+                        <dxb:BarCheckItemLink BarItemName="checkBtnItalic"/>
+                        <dxb:BarCheckItemLink BarItemName="checkBtnUnderline"/>
+                    </dxb:Bar.ItemLinks>
+
+                </dxb:Bar>
+            </dxb:BarManager.Bars>
+            <RichTextBox/>
+        </dxb:BarManager>
+    </Grid>
+</Window>
