@@ -1,10 +1,10 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [CustomUserControl.xaml](./CS/ControllerBehaviorSample/CustomUserControl.xaml) (VB: [CustomUserControl.xaml.vb](./VB/ControllerBehaviorSample/CustomUserControl.xaml.vb))
+* [CustomUserControl.xaml](./CS/ControllerBehaviorSample/CustomUserControl.xaml) (VB: [CustomUserControl.xaml](./VB/ControllerBehaviorSample/CustomUserControl.xaml))
 * [CustomUserControl.xaml.cs](./CS/ControllerBehaviorSample/CustomUserControl.xaml.cs) (VB: [CustomUserControl.xaml.vb](./VB/ControllerBehaviorSample/CustomUserControl.xaml.vb))
 * [MainWindow.xaml](./CS/ControllerBehaviorSample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/ControllerBehaviorSample/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/ControllerBehaviorSample/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/ControllerBehaviorSample/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/ControllerBehaviorSample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/ControllerBehaviorSample/MainWindow.xaml.vb))
 <!-- default file list end -->
 # How to define bars and bar items via a template
 
