@@ -14,14 +14,14 @@ Imports System.Windows.Navigation
 Imports System.Windows.Shapes
 
 Namespace ControllerBehaviorSample
-    ''' <summary>
-    ''' Interaction logic for CustomUserControl.xaml
-    ''' </summary>
-    Partial Public Class CustomUserControl
-        Inherits UserControl
+	''' <summary>
+	''' Interaction logic for CustomUserControl.xaml
+	''' </summary>
+	Partial Public Class CustomUserControl
+		Inherits UserControl
 
-        Public Sub New()
-            InitializeComponent()
-        End Sub
-    End Class
+		Public Sub New()
+			InitializeComponent()
+		End Sub
+	End Class
 End Namespace
